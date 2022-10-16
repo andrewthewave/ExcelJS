@@ -18,13 +18,6 @@ export class Formula extends ExcelComponent {
         this.$formula = this.$root.find('.input')
         this.$on('table:select', $cell =>
         this.$formula.text($cell.data.value))
-
-        /* this.$on('table:input', $cell =>
-        this.$formula.text($cell.text())) */
-        /* this.$subscribe(state => {
-            console.log('FormulaState', state)
-            this.$formula.text(state.currentText)
-        }) */
     }
 
     toHTML() {

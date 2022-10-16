@@ -19,7 +19,7 @@ class Dom {
     }
 
     attr(name, value) {
-        if (value) {
+        if (value || value === '') {
             this.$el.setAttribute(name, value)
             return this
         }
@@ -27,8 +27,6 @@ class Dom {
     }
 
     text(text) {
-        // eslint-disable-next-line no-debugger
-        // console.log('text: ', text, ' this: ', this)
         if (typeof text !== 'undefined') {
             this.$el.textContent = text
             return this
@@ -39,8 +37,8 @@ class Dom {
             return this.$el.textContent.trim()
     }
     find(selector) {
-        // eslint-disable-next-line max-len
-        return this.$el.querySelector(selector) ? $(this.$el.querySelector(selector)) : null
+        return this.$el.querySelector(selector) ?
+        $(this.$el.querySelector(selector)) : null
     }
 
     addClass(className) {

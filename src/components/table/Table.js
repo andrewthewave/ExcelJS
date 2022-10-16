@@ -7,7 +7,6 @@ import {$} from '@core/Dom';
 import * as actions from '@/redux/actions'
 import {defaultStyles} from '../../constants';
 import {parse} from '@core/parse'
-// import {storage} from '@core/utils';
 
 
 export class Table extends ExcelComponent {
@@ -34,14 +33,11 @@ export class Table extends ExcelComponent {
 
     init() {
         super.init()
-        // this.getTableData()
         const $cell = this.$root.find('[data-id="0:0"]')
-        /* this.selection.select($cell)
-        this.$emit('table:select', $cell) */
         this.selectCell($cell)
         this.$on('formula:input', text => {
             this.selection.current
-            .attr('data-value', text)
+            .attr('data-value', parse(text))
             .text(parse(text))
             this.updateStoreText(text)
         })
@@ -63,22 +59,7 @@ export class Table extends ExcelComponent {
                 ids: this.selection.selectedIDs
             }))
         })
-        /* this.$subscribe(state => {
-            console.log('TableState', state)
-        }) */
     }
-
-    /* getTableData() {
-        // eslint-disable-next-line no-unused-vars
-        const data = storage('excel-state')
-        let cols = this.$root.findAll('.column')
-        cols = Array.from(cols).map(col => $(col))
-        Object.keys(data.colState).forEach(col => {
-            cols[col].css({
-                width: data.colState[col] + 'px'
-            })
-        })
-    } */
 
     selectCell($cell) {
         this.selection.select($cell)
@@ -129,7 +110,6 @@ export class Table extends ExcelComponent {
         }))
     }
     onInput(event) {
-        // this.$emit('table:input', $(event.target))
         this.updateStoreText($(event.target).text())
     }
     }
