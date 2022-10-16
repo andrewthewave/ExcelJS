@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thewavebreaks/js.git"
+    "url": "git+https://github.com/andrewthewave/ExcelJS.git"
   },
   "keywords": [
     "js",
     "javascript",
     "excel"
   ],
-  "author": "Andrew G <breakingwave7@gmail.com>",
+  "author": "Andrew Gettun <breakingwave7@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thewavebreaks/js/issues"
+    "url": "https://github.com/andrewthewave/ExcelJS/issues"
   },
-  "homepage": "https://github.com/thewavebreaks/js#readme",
+  "homepage": "https://github.com/andrewthewave/ExcelJS#readme",
   "private": true,
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
